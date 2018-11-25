@@ -156,7 +156,7 @@ namespace PA1
         {
             char ch, ch2;
             bool successLogin = false;
-            GradStudent st;
+           // GradStudent st;
             var admins = new List<User>();
             List<Course> coursesList = new List<Course>();
             List<Enrollment> courseEnrolls = new List<Enrollment>();
@@ -178,7 +178,7 @@ namespace PA1
             List<User> students = new List<User>();
             students.AddRange(gslist);
             students.AddRange(ugslist);
-
+         
 
             do
             {
@@ -223,19 +223,21 @@ namespace PA1
                                     //int f=0;
                                     foreach  (GradStudent std in gslist)
                                             {
-                                            Console.WriteLine(std);
+                                            //Console.WriteLine(std);
                                                 {
                                             if (std.sName != term)
                                                     {
-                                                    Console.WriteLine("{GradStudent.sName} does not match the term"); //trace comment
-                                                        continue;
+                                                   // Console.WriteLine("{GradStudent.sName} does not match the term"); //trace comment
+                                                
                                                     }
 
                                             else
                                                     {
-                                                    Console.WriteLine("Student {std.sName} already exists");
+                                                    Console.WriteLine($"Student {std} already exists");
                                                     Console.WriteLine("Catherine will find a way to send you to the main menu");
-                                                    //[C-TODO]return user to the main menu
+                                                    
+                                                    LoginMenu();
+                                                    break;
                                                     }
 
                                                 } 
@@ -245,7 +247,68 @@ namespace PA1
                                             }
                                             
                                     Console.WriteLine("Student doesn't exist");
-                                    Console.WriteLine("Now we will add them to the database");
+                                  
+                                        Console.WriteLine($"Let's add {term} information to Graduate Student Database");
+                                        //Console.WriteLine("Please update the Under student's name");
+                                        //string StudName = (Console.ReadLine());
+                                     Console.WriteLine("Let's create a new Graduate student");
+                                      //UID
+                                    Console.WriteLine("Please enter the student's System ID Number");
+                                        string newUiD = (Console.ReadLine());
+                                      //PW  
+                                      Console.WriteLine("Please enter the student's pw");
+                                        string newPw = (Console.ReadLine());
+                                      
+                                      //NAME
+                                        Console.WriteLine("Please enter the student's name");
+                                        string newsName =  (Console.ReadLine());
+                                        //New GPA
+                                        Console.WriteLine("Please enter the student'sUG GPA");
+                                        float newGPA =  float.Parse(Console.ReadLine());
+                                      //DOB
+                                        Console.WriteLine("Please enter student's date of birth (e.g. 10/22/1987)");
+                                        string newDoB = (Console.ReadLine());
+                                        //Console.WriteLine("Please enter the student's major");
+                                        //string newDept = (Console.ReadLine());
+                                        //Console.WriteLine("Please enter the student's Dept.");
+                                        //float newGPA = float.Parse(Console.ReadLine());
+                                       // Console.WriteLine("Please enter the student's Previous Degree");
+                                        ///string newPrevDegree = (Console.ReadLine());
+                                    //PREVIOUS UNIVERSITY    
+                                        Console.WriteLine("Please enter the student's Previous University");
+                                        string newPrevUniversity = (Console.ReadLine());
+                                        
+                                        //Console.WriteLine("Please enter the student's Previous University Dept.");
+                                        //string newUDept = (Console.ReadLine());
+                                       //UgGAP
+                                    //UG GPA
+                                        Console.WriteLine("Please enter the student'sUG GPA");
+                                        float newUgGPA =  float.Parse(Console.ReadLine());
+
+//HERE IS ANOTHER WAY TO ADD A GRAD STUDENT
+              //  GradStudent e2 = new GradStudent(newUiD, newPw, newsName, newGPA, newDoB, newPrevUniversity, newUgGPA);
+                //gslist.Add(e2);
+
+    // base Student(string uID, string pw, string sName, string DoB,float gpa)
+                //Now we update the Undergrad list with the information from the user inputs
+               // gslist.Add(new GradStudent());  //(newUiD, newPw, newsName, newGPA, newDoB3
+// gslist.Add(new GradStudent(newPw, newsName, newGPA, newDoB, newPrevUniversity, newUgGPA));
+
+//                gslist.Add(new GradStudent(newID, newPw, newsName, newUid, newDoB, newDept, newGPA, newPrevDegree, newPrevUniversity, newUDept, newUgGPA));
+//users.Add(new GradStudent(stdData));
+//Id, pw, sName, sID, DoB, Dept, GPA, pDeg, pUni, Dept, uGPA
+//Jo12, 12, John, 12234, 01/01/81, CIS, 3.00, BSc, WTAMU, CS, 3.33
+
+                  //end updating grad student information
+                 //   Console.WriteLine($"The Entry for the Gradstudent is now {Gradstudent.StudName} {Gradstudent.StudId}{Gradstudent.Major}");
+                   // CreateMenu(gradstudents, undergradstudents);
+
+                                  string something = Console.ReadLine();  
+
+                                    
+                                                                    
+                                                                    
+                                                                    
                                                                     break;
                                                                 
                                                                     //LoadUserData(utype, ugslist, fileName);
@@ -274,7 +337,23 @@ namespace PA1
                                               //        : ++ Save new list to File if admin agrees
                                              
                                          // Test: Currently adding one specific course
-                                        coursesList.Add(new Course("Adv. Prog", 3312, 3));
+
+                                         //Attempt to do 3
+
+                                         Console.WriteLine("Enter the course name");
+                                        string ncName = (Console.ReadLine());
+                                      //PW  
+                                      Console.WriteLine("Please enter the course ID");
+                                        int ncID = Convert.ToInt32(Console.ReadLine());
+                                      
+                                      //NAME
+                                        Console.WriteLine("Please enter the number of credits");
+                                        int nnCredits = Convert.ToInt32(Console.ReadLine());
+
+                                        //end attempt to do 3
+
+                                        coursesList.Add(new Course(ncName, ncID, nnCredits));
+
                                         //coursesList[0].professor = (Professor )profList[0];
                                         break;
                                     case '6': //TODO (4): Assign course to prof by getting ProfId, courseId,
@@ -282,11 +361,52 @@ namespace PA1
                                               //        : ++ Save new list to File, and make the code initialize prof-course-assignment list from a file 
 
                                         // Test: Currently Assign all courses to 1st prof in the list
+                                         Console.WriteLine("Let's add a professor to a course");
+                                          Console.WriteLine("Please enter the name of the course");
+                                         string nameCourse = Console.ReadLine();
+                                          Console.WriteLine("Please enter the name of the professor that should be added to the course");
+                                        string profName = Console.ReadLine();
+
+                                        int x = 0;
+                                        //CATHERINE TODO - WE NEED TO USE
+                                        //TO FIGURE OUT WHICH PROFESSOR WE ARE LOOKING FOR...
+                                        //Search for prof name match
+
+                                        foreach (Course c in coursesList)
+                                        {
+                                            if (c.cName == "nameCourse")
+                                            {
+                                                Console.WriteLine("This might work");
+                                                Console.WriteLine("Let's add the professor to the course");
+
+                                                c.professor = (Professor)profList[x];
+                                                c.professor.addCourseToTeach(c);
+
+                                                break; // If you only want to find the first instance a break here would be best for your application
+                                            }
+
+                                            
+
+                                        }
+
+                                        Console.WriteLine("We don't have that class on record");
+
+           /* 
+                                        int x=0;
+
+                                         for (x.profList)
+                                        {
+                                            if (profName == profList.pName)
+                                            c.professor = (Professor)profList[0];
+                                            c.professor.addCourseToTeach(c);
+                                        }
+                                        //end search for profname match
+
                                         foreach (var c in coursesList)
                                         {
                                             c.professor = (Professor)profList[0];
                                             c.professor.addCourseToTeach(c);
-                                        }
+                                        } */
                                         break;
 
                                     case '7':

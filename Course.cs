@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using Students;
 public class Course{
-    string cName;
+    public string cName;
     public Professor professor{get;set;}
     public int cId{get; set;}
-    int nCredits;
+     public int nCredits;
     List <Assessment> crsAsses;
     List<Enrollment> enrollments = new List<Enrollment>();
     public Course(string cn, int id, int credits){

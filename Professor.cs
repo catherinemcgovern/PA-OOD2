@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using Students;
 public class Professor:User{
-    string pName;
-    string degree;
-    string rank;
-    List<Course> teaching = new List<Course>();
+    public string pName;
+    public string degree;
+    public string rank;
+    public List<Course> teaching = new List<Course>();
 
     public Professor(string[] pData){
         //uId, pw  , pName, degree, rank

@@ -16,6 +16,8 @@ public abstract class Student:User{
 
     }
 
+   
+
     public Student(string uID, string pw, string sName, string DoB,float gpa)
     {
         this.uId = uID;
@@ -24,6 +26,10 @@ public abstract class Student:User{
         this.gpa = gpa;
         this.DoB = DoB;
     }
+
+
+
+
     public string getName(){
         return sName;
     }
@@ -82,20 +88,29 @@ public class GradStudent:Student{
     // std id = sData[3] not used
      public GradStudent(string[] sData):base( sData[0].Trim(), sData[1].Trim(),sData[2].Trim(),
                          sData[4].Trim(),float.Parse(sData[6])){
-        String uid  = sData[0].Trim();
-        String pw = sData[1].Trim();
-        String sName = sData[2].Trim();
-        float gpa = float.Parse(sData[6]);
-        string DoB = sData[4].Trim();
-        string PrevUniversity= sData[8].Trim();
-        float ugGpa = float.Parse(sData[10]);
+        String uId  = sData[0].Trim();//1
+        String pw = sData[1].Trim();//2
+        String sName = sData[2].Trim();//3
+        float gpa = float.Parse(sData[6]);//4
+        String DoB = sData[4].Trim();//5
+        String PrevUniversity= sData[8].Trim();//6
+        float ugGpa = float.Parse(sData[10]);//7
 
-
-        
+       // this.uId = uId;
+       // this.passWord = pw;
+       // this.sName = sName;
+       // this.gpa = gpa;
+       // this.DoB = DoB;
         this.PrevUniversity = PrevUniversity;
         this.ugGpa = ugGpa;
-      
+
+        
+  
     }
+  public override string ToString() =>
+$"Graduate Student: {sName}; Date of Birth: {DoB}; GPA: {gpa}; Previous University {PrevUniversity}; Undergraduate: {ugGpa}";
+     
+          
     /* public GradStudent(string sName,float gpa, string DoB, string PrevUniversity, float ugGpa) :base( sName,gpa, DoB)
     {
         this.PrevUniversity = PrevUniversity;
@@ -109,6 +124,7 @@ public class GradStudent:Student{
     public override float calcGpa(){
         return 3.3f;
     }
+
 }
 
 

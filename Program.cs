@@ -249,8 +249,7 @@ namespace PA1
                                     Console.WriteLine("Student doesn't exist");
                                   
                                         Console.WriteLine($"Let's add {term} information to Graduate Student Database");
-                                        //Console.WriteLine("Please update the Under student's name");
-                                        //string StudName = (Console.ReadLine());
+                                       
                                      Console.WriteLine("Let's create a new Graduate student");
                                       //UID
                                     Console.WriteLine("Please enter the student's System ID Number");
@@ -268,12 +267,7 @@ namespace PA1
                                       //DOB
                                         Console.WriteLine("Please enter student's date of birth (e.g. 10/22/1987)");
                                         string newDoB = (Console.ReadLine());
-                                        //Console.WriteLine("Please enter the student's major");
-                                        //string newDept = (Console.ReadLine());
-                                        //Console.WriteLine("Please enter the student's Dept.");
-                                        //float newGPA = float.Parse(Console.ReadLine());
-                                       // Console.WriteLine("Please enter the student's Previous Degree");
-                                        ///string newPrevDegree = (Console.ReadLine());
+                           
                                     //PREVIOUS UNIVERSITY    
                                         Console.WriteLine("Please enter the student's Previous University");
                                         string newPrevUniversity = (Console.ReadLine());
@@ -285,14 +279,14 @@ namespace PA1
                                         Console.WriteLine("Please enter the student'sUG GPA");
                                         float newUgGPA =  float.Parse(Console.ReadLine());
 
-//HERE IS ANOTHER WAY TO ADD A GRAD STUDENT
+//TODO1: HERE IS one of the way's i've tried to add a student it -:
               //  GradStudent e2 = new GradStudent(newUiD, newPw, newsName, newGPA, newDoB, newPrevUniversity, newUgGPA);
                 //gslist.Add(e2);
 
     // base Student(string uID, string pw, string sName, string DoB,float gpa)
                 //Now we update the Undergrad list with the information from the user inputs
                // gslist.Add(new GradStudent());  //(newUiD, newPw, newsName, newGPA, newDoB3
-// gslist.Add(new GradStudent(newPw, newsName, newGPA, newDoB, newPrevUniversity, newUgGPA));
+//TODO1: gslist.Add(new GradStudent(newPw, newsName, newGPA, newDoB, newPrevUniversity, newUgGPA));
 
 //                gslist.Add(new GradStudent(newID, newPw, newsName, newUid, newDoB, newDept, newGPA, newPrevDegree, newPrevUniversity, newUDept, newUgGPA));
 //users.Add(new GradStudent(stdData));
@@ -374,7 +368,7 @@ namespace PA1
 
                                         foreach (Course c in coursesList)
                                         {
-                                            if (c.cName == "nameCourse")
+                                            if (c.cName == nameCourse)
                                             {
                                                 Console.WriteLine("This might work");
                                                 Console.WriteLine("Let's add the professor to the course");
@@ -383,6 +377,13 @@ namespace PA1
                                                 c.professor.addCourseToTeach(c);
 
                                                 break; // If you only want to find the first instance a break here would be best for your application
+                                            }
+
+                                            else
+                                            {
+                                                Console.WriteLine("course not found");
+
+
                                             }
 
                                             

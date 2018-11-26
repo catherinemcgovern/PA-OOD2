@@ -234,7 +234,7 @@ namespace PA1
                                             else
                                                     {
                                                     Console.WriteLine($"Student {std} already exists");
-                                                    Console.WriteLine("Catherine will find a way to send you to the main menu");
+                                                  //  Console.WriteLine("Catherine will find a way to send you to the main menu");
                                                     
                                                     LoginMenu();
                                                     break;
@@ -263,40 +263,35 @@ namespace PA1
                                         string newsName =  (Console.ReadLine());
                                         //New GPA
                                         Console.WriteLine("Please enter the student'sUG GPA");
-                                        float newGPA =  float.Parse(Console.ReadLine());
+                                        string newGPA =  (Console.ReadLine());
                                       //DOB
                                         Console.WriteLine("Please enter student's date of birth (e.g. 10/22/1987)");
                                         string newDoB = (Console.ReadLine());
+                                    //Dept
+                                        Console.WriteLine("Please enter student's dept.");
+                                        string newUDept = (Console.ReadLine());
                            
+
                                     //PREVIOUS UNIVERSITY    
                                         Console.WriteLine("Please enter the student's Previous University");
                                         string newPrevUniversity = (Console.ReadLine());
-                                        
-                                        //Console.WriteLine("Please enter the student's Previous University Dept.");
-                                        //string newUDept = (Console.ReadLine());
-                                       //UgGAP
+
+                                         //PREVIOUS Degree   
+                                        Console.WriteLine("Please enter the student's Previous Degree");
+                                        string newPrevDegree = (Console.ReadLine());
+
+                                      //PREVIOUS Degree   
+                                        Console.WriteLine("Please enter the student's Previous Dept.");
+                                        string newPrevDept = (Console.ReadLine());
+                               
                                     //UG GPA
                                         Console.WriteLine("Please enter the student'sUG GPA");
-                                        float newUgGPA =  float.Parse(Console.ReadLine());
+                                        string newUgGPA =  (Console.ReadLine());
 
-//TODO1: HERE IS one of the way's i've tried to add a student it -:
-              //  GradStudent e2 = new GradStudent(newUiD, newPw, newsName, newGPA, newDoB, newPrevUniversity, newUgGPA);
-                //gslist.Add(e2);
-
-    // base Student(string uID, string pw, string sName, string DoB,float gpa)
-                //Now we update the Undergrad list with the information from the user inputs
-               // gslist.Add(new GradStudent());  //(newUiD, newPw, newsName, newGPA, newDoB3
-//TODO1: gslist.Add(new GradStudent(newPw, newsName, newGPA, newDoB, newPrevUniversity, newUgGPA));
-
-//                gslist.Add(new GradStudent(newID, newPw, newsName, newUid, newDoB, newDept, newGPA, newPrevDegree, newPrevUniversity, newUDept, newUgGPA));
-//users.Add(new GradStudent(stdData));
-//Id, pw, sName, sID, DoB, Dept, GPA, pDeg, pUni, Dept, uGPA
-//Jo12, 12, John, 12234, 01/01/81, CIS, 3.00, BSc, WTAMU, CS, 3.33
-
-                  //end updating grad student information
-                 //   Console.WriteLine($"The Entry for the Gradstudent is now {Gradstudent.StudName} {Gradstudent.StudId}{Gradstudent.Major}");
-                   // CreateMenu(gradstudents, undergradstudents);
-
+                                    string[] gradStudent = new string[] { newUiD, newPw, newsName, newUiD, newDoB, newUDept, newGPA, newPrevDegree, newPrevUniversity, newPrevDept, newUgGPA };
+                                    gslist.Add(new GradStudent(gradStudent));
+                                    //new GradStudent(gradStudent);
+                                    
                                   string something = Console.ReadLine();  
 
                                     
@@ -309,7 +304,91 @@ namespace PA1
 
 
                                     //TODO (2): Add new undergrad Student,
-                                    case '2': break;
+                                    //BEGIN CASE 2
+                                    case '2': 
+                                         Console.WriteLine("Let's add a new undergraduate student");
+                                    Console.WriteLine("First let's see if the student already exists");
+                                    Console.WriteLine("Please enter the undergraduates student's first name");
+                                    string uterm = Console.ReadLine();
+
+                             
+
+                                    //int f=0;
+                                    foreach  (UndergradStudent std in ugslist)
+                                            {
+                                            //Console.WriteLine(std);
+                                                {
+                                            if (std.sName != uterm)
+                                                    {
+                                                   // Console.WriteLine("{GradStudent.sName} does not match the term"); //trace commen
+                                                    }
+                                            else
+                                                    {
+                                                    Console.WriteLine($"Student {std} already exists");
+                                                  //  Console.WriteLine("Catherine will find a way to send you to the main menu");
+                                                    LoginMenu();
+                                                    break;
+                                                    }
+                                                } 
+                                            }
+                                            
+                                    Console.WriteLine("Student doesn't exist");
+                                  
+                                        Console.WriteLine($"Let's add {uterm}'s information to the Undergraduate Student Database");
+                                      
+                                     Console.WriteLine("Let's create a new Graduate student");
+                                      //UID
+                                    Console.WriteLine("Please enter the student's System ID Number");
+                                        string ngUiD = (Console.ReadLine());
+                                      //PW  
+                                      Console.WriteLine("Please enter the student's pw");
+                                        string ngPw = (Console.ReadLine());
+                                      
+                                      //NAME
+                                        Console.WriteLine("Please enter the student's name");
+                                        string ngName =  (Console.ReadLine());
+                                        //New GPA
+                                        Console.WriteLine("Please enter the student'sUG GPA");
+                                        string ngGPA =  (Console.ReadLine());
+//System UID
+                                         Console.WriteLine("Please enter the student's System ID Number");
+                                        string ngSUiD = (Console.ReadLine());
+                                      //DOB
+                                        Console.WriteLine("Please enter student's date of birth (e.g. 10/22/1987)");
+                                        string ngDoB = (Console.ReadLine());
+                                    //Dept
+                                        Console.WriteLine("Please enter student's dept.");
+                                        string ngDept = (Console.ReadLine());
+
+                                         //PREVIOUS Degree   
+                                        Console.WriteLine("Please enter the student's Previous Degree");
+                                        string ngHS = (Console.ReadLine());
+
+                                      //PREVIOUS Degree   
+                                        Console.WriteLine("Please enter the student's Classification");
+                                        string ngClass = (Console.ReadLine());
+                               
+
+
+                                    string[] UndergradStudent = new string[] { ngUiD, ngPw, ngName, ngSUiD, ngDoB, ngDept, ngGPA, ngHS, ngClass };
+                                    ugslist.Add(new UndergradStudent(UndergradStudent));
+                                   
+                                    
+                                  //string something = Console.ReadLine();  
+
+                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    break;
+                                      
+                                    
+                                    
+                                    
+                                    
+                                    break;
+                                    
+                                    //END CASE 2
                                     case '3':
                                         foreach (GradStudent std in gslist)
                                         {
